@@ -16,5 +16,11 @@ var app = new Vue({
 			this.imageCounter++;
 			if (this.imageCounter == this.images.length) this.imageCounter = 0;
 		},
+		startLoop() {
+			this.timer = setInterval(this.nextImage, 3000);
+		},
+	},
+	mounted() {
+		this.startLoop();
 	},
 });
